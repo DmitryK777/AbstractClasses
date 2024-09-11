@@ -10,7 +10,7 @@ namespace AbstractClasses
 	{
 		public override void Sound()
 		{
-			Console.WriteLine("Wau");
+			Console.WriteLine("Auuuuuuuuuuuu");
 		}
 	}
 }

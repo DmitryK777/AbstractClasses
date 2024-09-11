@@ -12,7 +12,7 @@ namespace AbstractClasses
 		{
 			Wolf wolf = new Wolf();
 			wolf.Sound();
-
+			
 			Chihuahua chihuahua = new Chihuahua();
 			chihuahua.Sound();
 		}

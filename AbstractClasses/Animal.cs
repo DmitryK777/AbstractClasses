@@ -8,6 +8,6 @@ namespace AbstractClasses
 {
 	abstract class Animal
 	{
-		abstract public void Sound();
+		public abstract void Sound();
 	}
 }
