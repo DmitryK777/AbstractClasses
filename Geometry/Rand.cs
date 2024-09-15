@@ -11,9 +11,9 @@ namespace Geometry
 		public Shape[] RandGroup(Shape[] group) 
 		{
 			Random random = new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
-			for (int i = group.Length - 1; i >= 1; i--)
+			for (int i = group.Length - 2; i >= 0; i--)
 			{
-				int j = random.Next(i + 1);
+				int j = random.Next(i+1);
 				Shape temp = group[j];
 				group[j] = group[i];
 				group[i] = temp;

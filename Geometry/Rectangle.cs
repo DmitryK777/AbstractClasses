@@ -10,10 +10,11 @@ namespace Geometry
 {
 	internal class Rectangle : Square
 	{
+		int height;
 		public int Height
 		{
-			get => Height;
-			set	{ Height = (value > 0) ? value : 0; }
+			get => height;
+			set	{ height = (value > 0) ? value : 0; }
 		}
 
 		public Rectangle(int start_x, int start_y, int line_width, int width, 
@@ -27,7 +28,7 @@ namespace Geometry
 		public override double Get_perimiter() { return 2 * (Width + Height); }
 		public override void Draw()
 		{
-			Bitmap bitmap = new Bitmap(850, 650, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+			Bitmap bitmap = new Bitmap(120, 30, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
 			Graphics graphics = Graphics.FromImage(bitmap);
 			Pen pen = new Pen(System.Drawing.Color.FromArgb(0, 77, 77, 77), Line_width);
 			graphics.DrawRectangle(pen, Start_x, Start_y, Width, Height);
@@ -37,7 +38,10 @@ namespace Geometry
             Console.WriteLine($"{base.ToString().Split('.').Last()}");
             Console.WriteLine($"Ширина: {Width}");
             Console.WriteLine($"Высота: {Height}");
-			base.Info();
+			Console.WriteLine($"Площадь: {Get_area()}");
+			Console.WriteLine($"Периметр: {Get_perimiter()}");
+			Draw();
+            Console.WriteLine();
         }
 	}
 }

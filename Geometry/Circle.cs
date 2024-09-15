@@ -9,10 +9,11 @@ namespace Geometry
 {
 	internal class Circle : Shape
 	{
+		int radius;
 		public int Radius
 		{
-			get => Radius;
-			set {Radius = (value > 0) ? value : 0; }
+			get => radius;
+			set {radius = (value > 0) ? value : 0; }
 		}
 		public Circle(int start_x, int start_y, int line_width, int radius
 			) : base(start_x, start_y, line_width)
@@ -24,7 +25,7 @@ namespace Geometry
 		public override double Get_perimiter() { return 2 * (Math.PI * Radius); }
 		public override void Draw()
 		{
-			Bitmap bitmap = new Bitmap(850, 650, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+			Bitmap bitmap = new Bitmap(120, 30, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
 			Graphics graphics = Graphics.FromImage(bitmap);
 			Pen pen = new Pen(System.Drawing.Color.FromArgb(0, 77, 77, 77), 5);
 			graphics.DrawEllipse(pen, Start_x, Start_y, Radius, Radius);
@@ -33,7 +34,10 @@ namespace Geometry
 		{
 			Console.WriteLine($"{base.ToString().Split('.').Last()}");
 			Console.WriteLine($"Радиус: {Radius}");
-			base.Info();
-		}
+			Console.WriteLine($"Площадь: {Get_area()}");
+			Console.WriteLine($"Периметр: {Get_perimiter()}");
+			Draw();
+            Console.WriteLine();
+        }
 	}
 }

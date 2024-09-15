@@ -10,12 +10,15 @@ namespace Geometry
 	{
 		static void Main(string[] args)
 		{
+            //Console.WriteLine(Console.WindowWidth);
+            //Console.WriteLine(Console.WindowHeight);
+            
 			Shape[] shapes_group =
 			{
-				new Square(150, 150, 5, 20),
-				new Rectangle(150, 250, 5, 20, 10),
-				new Triangle(150, 350, 5, 20, 10),
-				new Circle(150, 450, 5, 20)
+				new Square(20, 5, 2, 5),
+				new Rectangle(20, 12, 2, 20, 5),
+				new Triangle(20, 19, 2, 20, 5),
+				new Circle(20, 24, 2, 5)
 			};
 
 			Rand rand = new Rand();
@@ -26,6 +29,7 @@ namespace Geometry
 			{
 				shapes_group_random[i].Info();
 			}
-		}
+
+        }
 	}
 }
